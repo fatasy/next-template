@@ -9,13 +9,9 @@ export function useForm<
   TFieldValues extends FieldValues = FieldValues,
   TContext = any,
   TTransformedValues extends FieldValues | undefined = undefined
->({
-  ...props
-}: UseFormProps<TFieldValues, TContext>): UseFormReturn<
-  TFieldValues,
-  TContext,
-  TTransformedValues
-> {
+>(
+  props?: UseFormProps<TFieldValues, TContext>
+): UseFormReturn<TFieldValues, TContext, TTransformedValues> {
   const form = UseReactHookForm<TFieldValues, TContext, TTransformedValues>(
     props
   );

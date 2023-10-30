@@ -1,18 +1,13 @@
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
 
 export const UserZodScheme = z.object({
-  firstName: z.string().min(1).max(18),
-  lastName: z.string().min(1).max(18),
-  phone: z.string().min(10).max(14).optional(),
-  email: z.string().email(),
-  url: z.string().url().optional(),
-});
+  id: z.number(),
+  name: z.string().min(1).max(18),
+  password: z.string().min(10).max(14),
+  birthData: z.string(),
+})
 
+export type User = z.infer<typeof UserZodScheme>
 
-export type User = z.infer<typeof UserZodScheme>;
-
-
-export const UserFormValidation = zodResolver(UserZodScheme);
-
-
+export const UserFormValidation = zodResolver(UserZodScheme)
