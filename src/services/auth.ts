@@ -1,6 +1,8 @@
-import { SignInData, User } from '@/contexts/auth.context'
+
+
+import { User } from '@validations/user.validations'
+import { SignInData } from '../validations/singIn.validations'
 import api from './api'
-import { delay } from '@/utils/dev.utils'
 
 export type SignInRequestData = {
   email: string
@@ -8,13 +10,9 @@ export type SignInRequestData = {
 }
 
 export type signInRequestResult = {
-  data: {
-    token: {
-      expires: string
-      token: string
-    }
-    snExpirada: boolean
-  }
+  token: string
+  snExpirada: boolean
+  user: User
 }
 
 export type SignUpRequestData = {
@@ -25,12 +23,7 @@ export type SignUpRequestData = {
 export async function signInRequest(
   signInData: SignInData,
 ): Promise<signInRequestResult> {
-  const { data } = await api.post<signInRequestResult>('Auth/cota', {
-    codigoGrupo: signInData.groupCode,
-    codigoCota: signInData.QuotaCode,
-    versao: signInData.version,
-    senha: signInData.password,
-  })
+  const { data } = await api.post<signInRequestResult>('login', signInData)
   return data
 }
 
@@ -40,7 +33,6 @@ export async function signUpRequest(signUpData: SignUpRequestData) {
 }
 
 export async function recoverUserInformation() {
-  await delay()
   return {
     user: {
       name: '',

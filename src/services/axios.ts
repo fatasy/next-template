@@ -1,6 +1,6 @@
 import axios from "axios";
 import { parseCookies } from "nookies";
-import { AUTH_TOKEN_NAME } from "../contexts/auth.constants";
+import { AUTH_TOKEN_NAME } from "../constants/auth.constants";
 
 export function getAPIClient(ctx?: any) {
   const { [AUTH_TOKEN_NAME]: token } = parseCookies(ctx);

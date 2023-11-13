@@ -23,19 +23,6 @@ const columns: TableProps<User>['columns'] = [
 export default function UsersPage() {
   const { data } = useUsersQuery({ query: 1 })
 
-  const getData = (count: number) => {
-    const data: User[] = new Array(count).fill(null).map((_, index) => ({
-      id: index,
-      firstName: `First_${index.toString(16)}`,
-      email: `Last_${index.toString(16)}`,
-      lastName: `New York No. ${index} Lake Park`,
-      phone: `London No. ${index} Lake Park`,
-      url: `Sydney No. ${index} Lake Park`,
-    }))
-
-    return data
-  }
-
   return (
     <main className="h-screen">
       <h1>Users Page</h1>

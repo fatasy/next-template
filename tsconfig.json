@@ -48,6 +48,12 @@
       ],
       "@styles/*": [
         "./src/styles/*"
+      ],
+      "@layouts/*": [
+        "./src/layouts/*"
+      ],
+      "@constants/*": [
+        "./src/constants/*"
       ]
     }
   },
