@@ -22,7 +22,13 @@ export function Providers(props: { children: React.ReactNode }) {
     <QueryClientProvider client={queryClient}>
       <ReactQueryStreamedHydration>
         <ConfigProvider
-          theme={{ token: { borderRadius: 4, borderRadiusLG: 4 } }}
+          theme={{
+            token: {
+              borderRadius: 4,
+              borderRadiusLG: 4,
+              colorBgLayout: '#f1f2f5',
+            },
+          }}
         >
           {props.children}
         </ConfigProvider>

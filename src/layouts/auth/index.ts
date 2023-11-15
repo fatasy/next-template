@@ -6,9 +6,9 @@ import AuthRootLayout from "./root.layout";
 export const AuthLayout = Object.assign(
   AuthRootLayout,
   {
-    header: AuthHeaderLayout,
-    content: AuthContentLayout,
-    footer: AuthFooterLayout
+    Header: AuthHeaderLayout,
+    Content: AuthContentLayout,
+    Footer: AuthFooterLayout
   },
 )
 

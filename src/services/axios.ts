@@ -4,6 +4,7 @@ import { AUTH_TOKEN_NAME } from "../constants/auth.constants";
 
 export function getAPIClient(ctx?: any) {
   const { [AUTH_TOKEN_NAME]: token } = parseCookies(ctx);
+  console.log({ token });
 
   const api = axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_URL,

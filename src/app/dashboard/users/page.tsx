@@ -1,34 +1,41 @@
 'use client'
 
-import { Table, TableProps } from '@/src/components/Table/index.table'
-import { useUsersQuery } from '@/src/hooks/useUserQuery'
-import { User } from '@/src/validations/user.validations'
-import Link from 'next/link'
+import { ExameGroup } from '@/validations/exame-group.validations'
+import { Table, TableProps } from '@components/Table'
+import {
+  useExameGroupsQuery,
+  useExameGroupsResult,
+} from '@hooks/useExameGroupQuery'
+import { DashboardLayout as Layout } from '@layouts/dashboard'
 
-const columns: TableProps<User>['columns'] = [
+const columns: TableProps<ExameGroup>['columns'] = [
   {
     title: 'ID',
     dataIndex: 'id',
   },
   {
-    title: 'FistName',
+    title: 'Nome',
     dataIndex: 'name',
   },
   {
-    title: 'LastName',
-    dataIndex: 'password',
+    title: 'Ativo',
+    dataIndex: 'active',
   },
 ]
 
 export default function UsersPage() {
-  const { data } = useUsersQuery({ query: 1 })
+  const { data = {} as useExameGroupsResult } = useExameGroupsQuery()
+  const { content } = data
 
   return (
-    <main className="h-screen">
-      <h1>Users Page</h1>
-      <Link href="/users/add">Add User</Link>
-      <Link href="/users/edit/1">Edit User</Link>
-      <Table columns={columns} dataSource={data} />
-    </main>
+    <Layout>
+      <Layout.Sidebar />
+      <Layout.Main>
+        <Layout.Header />
+        <Layout.content>
+          <Table columns={columns} dataSource={content} />
+        </Layout.content>
+      </Layout.Main>
+    </Layout>
   )
 }

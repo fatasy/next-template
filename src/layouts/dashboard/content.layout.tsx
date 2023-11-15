@@ -9,7 +9,7 @@ export function DashboardContentLayout({
   ...props
 }: DashboardContentLayoutProps) {
   return (
-    <Content {...props} className="flex align-center justify-center">
+    <Content {...props} className="!py-4">
       {children}
     </Content>
   )

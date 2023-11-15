@@ -1,4 +1,5 @@
 import { Layout } from 'antd'
+import clsx from 'clsx'
 import React from 'react'
 
 const { Content } = Layout
@@ -9,10 +10,14 @@ type AuthContentLayoutProps = {
 
 export function AuthContentLayout({
   children,
+  className,
   ...props
 }: AuthContentLayoutProps) {
   return (
-    <Content {...props} className="flex items-center justify-center">
+    <Content
+      {...props}
+      className={clsx('flex items-center justify-center', className)}
+    >
       {children}
     </Content>
   )

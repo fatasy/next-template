@@ -1,4 +1,4 @@
-import { CRUD_ROUTES } from "@/src/constants/routes.constants"
+import { CRUD_ROUTES } from "@/constants/routes.constants"
 
 
 describe('Cruds', () => {

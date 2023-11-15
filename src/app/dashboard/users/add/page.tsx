@@ -1,8 +1,8 @@
 'use client'
 
-import UserForm from '@/src/components/forms/UserForm'
-import useUserMutation from '@/src/hooks/useUserMutation'
-import { User } from '@/src/validations/user.validations'
+import UserForm from '@/components/Forms/UserForm'
+import useUserMutation from '@/hooks/useUserMutation'
+import { User } from '@/validations/user.validations'
 
 export default function AddUserPage() {
   const { mutateAsync: addUser } = useUserMutation()

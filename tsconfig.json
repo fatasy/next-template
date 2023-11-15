@@ -26,7 +26,7 @@
     ],
     "paths": {
       "@/*": [
-        "./*"
+        "./src/*"
       ],
       "@app/*": [
         "./src/app/*"
@@ -54,7 +54,7 @@
       ],
       "@constants/*": [
         "./src/constants/*"
-      ]
+      ],
     }
   },
   "include": [
@@ -62,7 +62,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "cypress/e2e/app.cy.js"
+    "cypress/e2e/app.cy.js",
+    "postcss.config."
   ],
   "exclude": [
     "node_modules"

@@ -1,10 +1,12 @@
-import { useAuthStore } from '@/src/hooks/useAuthStore'
-import { getItemsWithDefaultClass } from '@/src/utils/menu.utils'
+import { AUTH_SIGN_IN_PATH } from '@/constants/auth.constants'
+import { useAuthStore } from '@/hooks/useAuthStore'
+import { getMenuItemsWithDefaultClass } from '@/utils/menu.utils'
 import { LogoutOutlined, UserOutlined } from '@ant-design/icons'
 
 import { Avatar, Button, Flex, Popover, Typography } from 'antd'
+import { useRouter } from 'next/navigation'
 
-const USER_MENU_ITEMS = getItemsWithDefaultClass(
+const USER_MENU_ITEMS = getMenuItemsWithDefaultClass(
   [
     {
       key: '1',
@@ -17,8 +19,13 @@ const USER_MENU_ITEMS = getItemsWithDefaultClass(
 )
 
 export function UserPopover() {
-  const { user, singOut } = useAuthStore()
-  console.log({ user })
+  const Router = useRouter()
+  const { user, singOut: authSingOut } = useAuthStore()
+
+  function singOut() {
+    authSingOut()
+    Router.push(AUTH_SIGN_IN_PATH)
+  }
 
   return (
     <Popover

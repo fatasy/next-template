@@ -18,7 +18,7 @@ export type UseQueryOptionsWithId<R> = {
 } & UseQueryOptionsType<R>;
 
 export type UseQueryOptionsWithQuery<R> = {
-  query: QueryParam;
+  query?: QueryParam;
 } & UseQueryOptionsType<R>;
 
 type MutationTypeVariables<D> = {

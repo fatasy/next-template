@@ -6,12 +6,12 @@ type DefaultApiQueryFnParams<R> = AxiosRequestConfig<R> & {
   url: string
 }
 
-export const defaultApiQueryFn = async <R>({
+export const defaultApiQueryFn = async <R = unknown>({
   url,
   query,
   ...config
 }: DefaultApiQueryFnParams<R>): Promise<R> => {
-  const { data } = await api<R>(url.concat(query ? `/${query}` : '/'), config)
+  const { data } = await api<R>(url.concat(query ? `/${query}` : ''), config)
   return data
 }
 

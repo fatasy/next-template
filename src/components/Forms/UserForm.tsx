@@ -1,5 +1,5 @@
-import { FormType } from '@/src/@types/form.types'
-import { User, UserFormValidation } from '@/src/validations/user.validations'
+import { FormType } from '@/@types/form.types'
+import { User, UserFormValidation } from '@/validations/user.validations'
 import { FormItem } from '@components/FormItem'
 import { Button, Checkbox, Form, Input } from 'antd'
 import { useForm } from 'react-hook-form'

@@ -1,9 +1,10 @@
 'use client'
 
-import SingInForm from '@/src/components/forms/SignInForm'
-import { useAuthStore } from '@/src/hooks/useAuthStore'
+import SingInForm from '@/components/Forms/SignInForm'
+import { useAuthStore } from '@/hooks/useAuthStore'
 import { AuthLayout as Layout } from '@layouts/auth'
-import { Card, Typography } from 'antd'
+import { Flex } from 'antd'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 
@@ -17,14 +18,15 @@ export default function SigninPage() {
 
   return (
     <Layout>
-      <Layout.content>
-        <Card className="min-w-[470px] h-auto p-6" bordered={false}>
-          <Typography.Title level={3} className="!mb-6">
-            Faça login em sua conta
-          </Typography.Title>
+      <Layout.Content className="flex flex-col">
+        <Flex>
+          <Image src="/next.svg" alt="logo" width={100} height={100} />
+        </Flex>
+
+        <Flex className="min-w-[400px] h-auto p-3" vertical>
           <SingInForm onSubmit={signIn} inSubmit={inAuthentication} />
-        </Card>
-      </Layout.content>
+        </Flex>
+      </Layout.Content>
     </Layout>
   )
 }

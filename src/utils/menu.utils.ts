@@ -5,6 +5,6 @@ import clsx from 'clsx';
 
 
 
-export function getItemsWithDefaultClass(items: MenuItemType[], defaultClassName: string) {
+export function getMenuItemsWithDefaultClass(items: MenuItemType[], defaultClassName: string) {
   return items.map(({ className, ...item }) => ({ ...item, className: clsx(className, defaultClassName) }));
 }

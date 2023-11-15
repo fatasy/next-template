@@ -10,7 +10,7 @@ export function DashboardMainContentLayout({
   ...props
 }: DashboardMainLayoutProps) {
   return (
-    <Layout {...props} className="flex align-center justify-center !bg-white">
+    <Layout {...props} className="flex align-center justify-center">
       {children}
     </Layout>
   )

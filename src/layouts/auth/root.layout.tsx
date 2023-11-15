@@ -6,5 +6,18 @@ export default function AuthLayout({
 }: {
   children: React.ReactNode
 }) {
-  return <Layout className="!h-screen">{children}</Layout>
+  return (
+    <Layout
+      className="!h-screen"
+      style={{
+        backgroundImage:
+          'url(https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg)',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center 110px',
+        backgroundSize: '100%',
+      }}
+    >
+      {children}
+    </Layout>
+  )
 }

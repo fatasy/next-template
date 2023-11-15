@@ -6,7 +6,6 @@ export default function DashboardPage() {
   return (
     <Layout>
       <Layout.Sidebar />
-
       <Layout.Main>
         <Layout.Header />
         <Layout.content>
