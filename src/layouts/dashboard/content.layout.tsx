@@ -9,7 +9,7 @@ export function DashboardContentLayout({
   ...props
 }: DashboardContentLayoutProps) {
   return (
-    <Content {...props} className="!py-4">
+    <Content {...props} className="!py-6 !my-4 mx-6">
       {children}
     </Content>
   )

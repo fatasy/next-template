@@ -1,9 +1,6 @@
+'use client'
 import { useDashboardLayoutStore } from '@/hooks/useDashboardLayoutStore'
-import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from '@ant-design/icons'
+import { GroupOutlined } from '@ant-design/icons'
 import { Flex, Layout, Menu } from 'antd'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -18,19 +15,9 @@ const { Sider } = Layout
 
 const MAIN_MENU_ITEMS = [
   {
-    key: '/dashboard/users',
-    icon: <UserOutlined />,
-    label: <Link href="/dashboard/users">Usuários</Link>,
-  },
-  {
-    key: '2',
-    icon: <VideoCameraOutlined />,
-    label: 'nav 2',
-  },
-  {
-    key: '3',
-    icon: <UploadOutlined />,
-    label: 'nav 3',
+    key: '/dashboard/exames-groups',
+    icon: <GroupOutlined />,
+    label: <Link href="/dashboard/exames-groups">Grupo de Exames</Link>,
   },
 ]
 

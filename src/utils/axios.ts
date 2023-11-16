@@ -17,16 +17,24 @@ export const defaultApiQueryFn = async <R = unknown>({
 
 type DefaultApiActionFn<R> = DefaultApiQueryFnParams<R> & {
   id?: number | string
+  del?: boolean
 }
 
 export const defaultApiActionFn = async <R>({
   url,
   query,
   id,
+  data,
+  del = false,
   ...config
 }: DefaultApiActionFn<R>): Promise<R> => {
-  return api(url.concat(query ? `/${query}` : ''), {
-    method: id ? 'PUT' : 'POST',
-    ...config,
-  })
+  const { data: response } = await api(
+    url.concat(query || del ? `/${query || id}` : ''),
+    {
+      method: del ? 'DELETE' : id ? 'PUT' : 'POST',
+      ...(!del && { data: id ? { ...data, id } : data }),
+      ...config,
+    }
+  )
+  return response
 }

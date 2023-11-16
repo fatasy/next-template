@@ -36,12 +36,9 @@ export function UserPopover() {
       content={
         <Flex vertical>
           <Flex className="p-5" align="center">
-            <Avatar
-              size={32}
-              src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-            />
-            <Typography.Text type="secondary">
-              Ant Design (secondary)
+            <Avatar className="bg-blue-500" size={32} icon={<UserOutlined />} />
+            <Typography.Text className="ml-3" type="secondary">
+              Usuário
             </Typography.Text>
             <Button
               type="text"
@@ -65,10 +62,7 @@ export function UserPopover() {
         size="large"
         className="flex items-center justify-center"
       >
-        <Avatar
-          size={24}
-          src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-        />
+        <Avatar className="bg-blue-500" size={24} icon={<UserOutlined />} />
       </Button>
     </Popover>
   )

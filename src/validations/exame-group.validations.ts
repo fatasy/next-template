@@ -3,7 +3,7 @@ import { z } from 'zod'
 
 export const ExameGroupZodScheme = z.object({
   active: z.boolean().optional(),
-  company_id: z.number().optional(),
+  company_id: z.number().optional().default(1),
   id: z.number().optional(),
   name: z.string()
 })

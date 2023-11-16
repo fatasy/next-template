@@ -31,7 +31,7 @@ export const useAuthStore = create(
           maxAge: 60 * 60 * 1, // 1 hour
           path: '/',
         })
-        api.defaults.headers['Authorization'] = `Bearer ${token}`
+        api.defaults.headers.Authorization = `Bearer ${token}`
         set({
           user: userResult,
           isAuthenticated: true,
