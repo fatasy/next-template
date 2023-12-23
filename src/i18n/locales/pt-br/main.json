@@ -1,0 +1,47 @@
+{
+  "inter": "interpolated {{val}}",
+  "open": "Abrir {{noun}}",
+  "enter": "Entrar",
+  "box": "Caixa",
+  "value": "Valor",
+  "search": "Pesquisar",
+  "quantity": "Quantidade",
+  "justification": "Justificação",
+  "observation": "Observação",
+  "cash withdrawal": "Sangria",
+  "withdraw": "Retirar",
+  "cancel": "Cancelar",
+  "yes": "Sim",
+  "cashRegister": {
+    "open": "Abrir caixa",
+    "close": "Fechar caixa",
+    "confirm": {
+      "open": "Deseja realmente abrir o caixa?"
+    },
+    "success": {
+      "open": "Caixa aberto com sucesso",
+      "close": "Caixa fechado com sucesso"
+    },
+    "error": {
+      "open": "Erro ao abrir o caixa"
+    }
+  },
+  "cashWithdraw": {
+    "success": {
+      "withdraw": "Sangria registrada com sucesso"
+    },
+    "error": {
+      "withdraw": "Erro ao registrar a sangria"
+    }
+  },
+  "home": "Inicio",
+  "coins": "Moedas",
+  "banknotes": "Notas",
+  "ok": "Ok",
+  "zod": {
+    "currency": {
+      "min": "O valor deve ser maior ou igual a {{minimum}}",
+      "max": "O valor deve ser menor ou igual a {{maximum}}"
+    }
+  }
+}

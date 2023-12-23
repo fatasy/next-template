@@ -1,3 +1,4 @@
+import { Layout } from 'antd'
 import React from 'react'
 
 export default function AuthLayout({
@@ -6,7 +7,7 @@ export default function AuthLayout({
   children: React.ReactNode
 }) {
   return (
-    <div
+    <Layout
       className="!h-screen"
       style={{
         backgroundImage:
@@ -17,6 +18,6 @@ export default function AuthLayout({
       }}
     >
       {children}
-    </div>
+    </Layout>
   )
 }

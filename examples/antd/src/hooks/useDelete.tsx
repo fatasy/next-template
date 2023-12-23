@@ -1,4 +1,4 @@
-import { MutationResultType } from '@/@types/react-query'
+import { MutationResultType } from '@/@types/react-query.types'
 import modal from 'antd/es/modal'
 
 type useDeleteOptions = {

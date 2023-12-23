@@ -1,4 +1,4 @@
-import { ApiPaginationResult } from '@/@types/api'
+import { ApiPaginationResult } from '@/@types/api.types'
 
 export function setPaginationQueryData<
   TResult extends Record<string, any>,
@@ -8,13 +8,13 @@ export function setPaginationQueryData<
   if ('del' in variables) {
     return {
       ...prev,
-      content: content.filter((item) => item.id !== variables.id),
+      content: content.filter((exame) => exame.id !== variables.id),
     }
   }
   return {
     ...prev,
     content: variables.id
-      ? content.map((item) => (item.id === data.id ? data : item))
+      ? content.map((exame) => (exame.id === data.id ? data : exame))
       : [...content, data],
   }
 }
